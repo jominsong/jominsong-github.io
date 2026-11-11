@@ -1,0 +1,151 @@
+/* ==========================================================================
+   THEME SWITCHER (설정 창)
+   화면 오른쪽 아래의 버튼을 누르면 모드(라이트/다크/시스템)와 테마를 고르는 팝업이 열린다.
+   색은 전부 CSS 변수라서 현재 선택된 테마를 그대로 따라간다.
+   ========================================================================== */
+
+.theme-switcher {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  line-height: 1.4;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid color-mix(in srgb, var(--text-color) 30%, transparent);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px color-mix(in srgb, #000 25%, transparent);
+    cursor: pointer;
+
+    /* 아이콘 색은 그대로 두고 테두리만 강조색으로 바꿔서 어떤 테마에서도 대비가 유지되게 한다 */
+    &:hover {
+      border-color: var(--primary-color);
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.5rem);
+    width: 16rem;
+    max-width: calc(100vw - 2rem);
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid color-mix(in srgb, var(--text-color) 25%, transparent);
+    border-radius: $border-radius;
+    box-shadow: 0 4px 16px color-mix(in srgb, #000 30%, transparent);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: $type-size-5;
+  }
+
+  &__close {
+    padding: 0 0.25rem;
+    color: inherit;
+    font-size: 1.5em;
+    line-height: 1;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__group {
+    margin: 0 0 0.75rem;
+    padding: 0;
+    border: 0;
+
+    legend {
+      margin-bottom: 0.25rem;
+      padding: 0;
+      font-weight: bold;
+    }
+
+    label {
+      display: inline-block;
+      margin: 0 0.75rem 0 0;
+      cursor: pointer;
+    }
+
+    /* 테마 기본 폼 스타일(input { width: 100% })이 라디오를 줄바꿈시키는 것을 되돌린다 */
+    input[type="radio"] {
+      display: inline-block;
+      width: auto;
+      margin: 0 0.25rem 0 0;
+      vertical-align: middle;
+      box-shadow: none;
+    }
+  }
+
+  &__field {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+
+    /* 테마 기본 select 는 배경이 흰색 고정이라 다크 테마에서 글자가 안 보여서 테마 색을 쓴다 */
+    select {
+      display: block;
+      width: 100%;
+      margin: 0.25rem 0 0;
+      color: var(--text-color);
+      font-weight: normal;
+      background-color: var(--form-background-color);
+      border: 1px solid color-mix(in srgb, var(--text-color) 30%, transparent);
+      box-shadow: none;
+    }
+  }
+
+  &__current {
+    margin: 0;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+/* 테마를 바꾸는 순간에만 색이 부드럽게 변하도록 JS 가 html 에 붙였다 떼는 클래스 */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease,
+      fill 0.35s ease, stroke 0.35s ease, box-shadow 0.35s ease,
+      outline-color 0.35s ease, text-decoration-color 0.35s ease !important;
+    transition-delay: 0s !important;
+  }
+}
+
+@media print {
+  .theme-switcher {
+    display: none;
+  }
+}

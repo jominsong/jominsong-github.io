@@ -1,0 +1,38 @@
+# 설정 창에 표시할 테마 목록 (_tools/gen_themes.py 로 생성)
+# mode: 배경 밝기로 나눈 라이트/다크 분류
+- name: default
+  label: "Default"
+  mode: light
+- name: air
+  label: "Air"
+  mode: light
+- name: aqua
+  label: "Aqua"
+  mode: light
+- name: contrast
+  label: "Contrast"
+  mode: light
+- name: dark
+  label: "Dark"
+  mode: dark
+- name: dirt
+  label: "Dirt"
+  mode: light
+- name: mint
+  label: "Mint"
+  mode: light
+- name: neon
+  label: "Neon"
+  mode: dark
+- name: plum
+  label: "Plum"
+  mode: dark
+- name: sunrise
+  label: "Sunrise"
+  mode: light
+- name: catppuccin_latte
+  label: "Catppuccin Latte"
+  mode: light
+- name: catppuccin_mocha
+  label: "Catppuccin Mocha"
+  mode: dark

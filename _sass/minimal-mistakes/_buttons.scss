@@ -3,6 +3,24 @@
    ========================================================================== */
 
 /*
+   버튼 배경/글자색.
+   테마에 따라 바뀌는 색(primary 등)은 yiq 대비색을 빌드 때 계산할 수 없어서
+   _themes.scss 에 테마별로 미리 계산해 둔 --*-contrast 변수를 쓴다.
+   ========================================================================== */
+
+@mixin btn-contrasted($name, $color, $themed) {
+  @if $themed {
+    background-color: var(--#{$name}-color);
+    color: var(--#{$name}-color-contrast);
+  } @else if $name == inverse {
+    background-color: #fff;
+    color: var(--dark-gray);
+  } @else {
+    @include yiq-contrasted($color);
+  }
+}
+
+/*
    Default button
    ========================================================================== */
 
@@ -30,13 +48,13 @@
 
   /* button colors */
   $buttoncolors:
-  (primary, $primary-color),
+  (primary, var(--primary-color)),
   (inverse, #fff),
   (light-outline, transparent),
-  (success, $success-color),
-  (warning, $warning-color),
-  (danger, $danger-color),
-  (info, $info-color),
+  (success, var(--success-color)),
+  (warning, var(--warning-color)),
+  (danger, var(--danger-color)),
+  (info, var(--info-color)),
   /* brands */
   (bluesky, $bluesky-color),
   (facebook, $facebook-color),
@@ -46,21 +64,31 @@
   (x, $x-color);
 
   @each $buttoncolor, $color in $buttoncolors {
+    $themed: index((primary, success, warning, danger, info), $buttoncolor);
+
     &--#{$buttoncolor} {
-      @include yiq-contrasted($color);
+      @include btn-contrasted($buttoncolor, $color, $themed);
       @if ($buttoncolor == inverse) {
-        border: 1px solid $border-color;
+        border: 1px solid var(--border-color);
       }
       @if ($buttoncolor == light-outline) {
         border: 1px solid #fff;
       }
 
       &:visited {
-        @include yiq-contrasted($color);
+        @include btn-contrasted($buttoncolor, $color, $themed);
       }
 
       &:hover {
-        @include yiq-contrasted(mix(#000, $color, 20%));
+        @if $themed {
+          background-color: color-mix(in srgb, #000 20%, var(--#{$buttoncolor}-color));
+          color: var(--#{$buttoncolor}-color-hover-contrast);
+        } @else if $buttoncolor == inverse {
+          background-color: mix(#000, #fff, 20%);
+          color: var(--dark-gray);
+        } @else {
+          @include yiq-contrasted(mix(#000, $color, 20%));
+        }
       }
     }
   }

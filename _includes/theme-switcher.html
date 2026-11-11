@@ -1,0 +1,52 @@
+{%- comment -%}
+  설정 창(테마/다크·라이트 모드). _layouts/default.html 에서 불러온다.
+  기본값은 _config.yml 의 theme_switcher, 테마 목록은 _data/themes.yml 이다.
+  화면에 보이는 글자(모드, 라이트 테마 등)를 바꾸려면 이 파일에서 직접 고치면 된다.
+{%- endcomment -%}
+{%- assign ts = site.theme_switcher -%}
+<div class="theme-switcher" id="theme-switcher"
+     data-default-mode="{{ ts.default_mode | default: 'light' }}"
+     data-default-light="{{ ts.default_light | default: 'default' }}"
+     data-default-dark="{{ ts.default_dark | default: 'dark' }}">
+  <button type="button" class="theme-switcher__toggle" id="theme-switcher-toggle"
+          aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-switcher-panel"
+          aria-label="테마 설정" title="테마 설정">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <div class="theme-switcher__panel" id="theme-switcher-panel" role="dialog" aria-label="테마 설정" hidden>
+    <div class="theme-switcher__header">
+      <strong>설정</strong>
+      <button type="button" class="theme-switcher__close" aria-label="닫기">&times;</button>
+    </div>
+
+    <fieldset class="theme-switcher__group">
+      <legend>모드</legend>
+      <label><input type="radio" name="theme-mode" value="light">라이트</label>
+      <label><input type="radio" name="theme-mode" value="dark">다크</label>
+      <label><input type="radio" name="theme-mode" value="system">시스템</label>
+    </fieldset>
+
+    <label class="theme-switcher__field">라이트 테마
+      <select id="theme-light">
+        {%- for t in site.data.themes -%}{%- if t.mode == 'light' -%}
+        <option value="{{ t.name }}">{{ t.label }}</option>
+        {%- endif -%}{%- endfor -%}
+      </select>
+    </label>
+
+    <label class="theme-switcher__field">다크 테마
+      <select id="theme-dark">
+        {%- for t in site.data.themes -%}{%- if t.mode == 'dark' -%}
+        <option value="{{ t.name }}">{{ t.label }}</option>
+        {%- endif -%}{%- endfor -%}
+      </select>
+    </label>
+
+    <p class="theme-switcher__current">현재 적용 중: <strong id="theme-current"></strong></p>
+  </div>
+</div>
+<script src="{{ '/assets/js/theme-switcher.js' | relative_url }}" defer></script>

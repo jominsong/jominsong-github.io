@@ -13,13 +13,14 @@
 @mixin notice($notice-color) {
   margin: 2em 0 !important;  /* override*/
   padding: 1em;
-  color: $text-color;
+  color: var(--text-color);
   font-family: $global-font-family;
   font-size: $type-size-6 !important;
   text-indent: initial; /* override*/
-  background-color: mix($background-color, $notice-color, $notice-background-mix);
+  /* mix() 는 CSS 변수를 못 받아서 브라우저가 계산하는 color-mix() 로 대체 */
+  background-color: color-mix(in srgb, var(--background-color) var(--notice-background-mix), #{$notice-color});
   border-radius: $border-radius;
-  box-shadow: 0 1px 1px rgba($notice-color, 0.25);
+  box-shadow: 0 1px 1px color-mix(in srgb, #{$notice-color} 25%, transparent);
 
   h4 {
     margin-top: 0 !important; /* override*/
@@ -46,19 +47,19 @@
   }
 
   a {
-    color: mix($text-color, $notice-color, 10%);
+    color: color-mix(in srgb, var(--text-color) 10%, #{$notice-color});
 
     &:hover {
-      color: mix($text-color, $notice-color, 50%);
+      color: color-mix(in srgb, var(--text-color) 50%, #{$notice-color});
     }
   }
 
   @at-root #{selector-unify(&, "blockquote")} {
-    border-inline-start-color: mix(#000, $notice-color, 10%);
+    border-inline-start-color: color-mix(in srgb, #000 10%, #{$notice-color});
   }
 
   code {
-    background-color: mix($background-color, $notice-color, $code-notice-background-mix)
+    background-color: color-mix(in srgb, var(--background-color) var(--code-notice-background-mix), #{$notice-color})
   }
 
 	pre code {
@@ -76,40 +77,40 @@
 
 .notice,
 .markdown-alert {
-  @include notice($light-gray);
+  @include notice(var(--light-gray));
 }
 
 /* Primary notice */
 
 .notice--primary,
 .markdown-alert-important {
-  @include notice($primary-color);
+  @include notice(var(--primary-color));
 }
 
 /* Info notice */
 
 .notice--info,
 .markdown-alert-note {
-  @include notice($info-color);
+  @include notice(var(--info-color));
 }
 
 /* Warning notice */
 
 .notice--warning,
 .markdown-alert-warning {
-  @include notice($warning-color);
+  @include notice(var(--warning-color));
 }
 
 /* Success notice */
 
 .notice--success,
 .markdown-alert-tip {
-  @include notice($success-color);
+  @include notice(var(--success-color));
 }
 
 /* Danger notice */
 
 .notice--danger,
 .markdown-alert-caution {
-  @include notice($danger-color);
+  @include notice(var(--danger-color));
 }

@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Themes (generated)
+   설정 창에서 고르는 12개 테마의 색상표.
+   각 스킨(skins/_*.scss)을 Sass 로 컴파일한 최종값이며, 스킨 파일이 바뀌면
+   _tools/gen_themes.py 로 다시 만들어야 한다.
+   - :root 는 default 테마 값 (data-theme 이 없을 때의 기본값)
+   - [data-theme="..."] 는 default 와 다른 값만 덮어쓴다
+   ========================================================================== */
+
+/* Default (light) */
+:root {
+  color-scheme: light;
+  --background-color: #fff;
+  --text-color: #3d4144;
+  --muted-text-color: #646769;
+  --border-color: #f2f3f3;
+  --code-background-color: #fafafa;
+  --form-background-color: #f2f3f3;
+  --footer-background-color: #f2f3f3;
+  --primary-color: #6f777d;
+  --success-color: #3fa63f;
+  --warning-color: #d67f05;
+  --danger-color: #ee5f5b;
+  --info-color: #3b9cba;
+  --focus-color: #6f777d;
+  --active-color: #e2e4e5;
+  --gray: #7a8288;
+  --dark-gray: #3d4144;
+  --light-gray: #bdc1c4;
+  --link-color: #2f7d95;
+  --link-color-hover: #235e70;
+  --link-color-visited: #4e91a5;
+  --masthead-link-color: #6f777d;
+  --masthead-link-color-hover: #53595e;
+  --navicon-link-color-hover: #dbdddf;
+  --notice-background-mix: 80%;
+  --code-notice-background-mix: 90%;
+  --base00: #263238;
+  --base04: #b2ccd6;
+  --base05: #eeffff;
+  --base06: #eeffff;
+  --base08: #f07178;
+  --base09: #f78c6c;
+  --base0a: #ffcb6b;
+  --base0b: #c3e88d;
+  --base0c: #89ddff;
+  --base0d: #82aaff;
+  --base0e: #c792ea;
+  --primary-color-contrast: #fff;
+  --primary-color-hover-contrast: #fff;
+  --success-color-contrast: #fff;
+  --success-color-hover-contrast: #fff;
+  --warning-color-contrast: #fff;
+  --warning-color-hover-contrast: #fff;
+  --danger-color-contrast: #fff;
+  --danger-color-hover-contrast: #fff;
+  --info-color-contrast: #fff;
+  --info-color-hover-contrast: #fff;
+  --muted-text-color-contrast: #fff;
+  --active-color-contrast: #3d4144;
+}
+
+/* Air (light) */
+:root[data-theme="air"] {
+  color-scheme: light;
+  --background-color: #eeeeee;
+  --text-color: #222831;
+  --muted-text-color: #393e46;
+  --border-color: #cecfd1;
+  --footer-background-color: #0092ca;
+  --primary-color: #0092ca;
+  --focus-color: #0092ca;
+  --active-color: #cce9f4;
+  --link-color: #393e46;
+  --link-color-hover: #2b2f35;
+  --link-color-visited: #575b62;
+  --masthead-link-color: #222831;
+  --masthead-link-color-hover: #222831;
+  --navicon-link-color-hover: #d3d4d6;
+}
+
+/* Aqua (light) */
+:root[data-theme="aqua"] {
+  color-scheme: light;
+  --background-color: #f0fff0;
+  --text-color: #0f477e;
+  --muted-text-color: #3f6c98;
+  --border-color: #e8f1fb;
+  --code-background-color: #e8f1fb;
+  --form-background-color: #e8f1fb;
+  --footer-background-color: #e8f1fb;
+  --primary-color: #1976d2;
+  --success-color: #27ae60;
+  --warning-color: #e67e22;
+  --danger-color: #c0392b;
+  --info-color: #03a9f4;
+  --focus-color: #1976d2;
+  --active-color: #d1e4f6;
+  --gray: #1976d2;
+  --dark-gray: #0f477e;
+  --light-gray: #8cbbe9;
+  --link-color: #03a9f4;
+  --link-color-hover: #027fb7;
+  --link-color-visited: #42bff7;
+  --masthead-link-color: #1976d2;
+  --masthead-link-color-hover: #13599e;
+  --navicon-link-color-hover: #c6ddf4;
+  --notice-background-mix: 90%;
+  --code-notice-background-mix: 95%;
+  --active-color-contrast: #0f477e;
+}
+
+/* Contrast (light) */
+:root[data-theme="contrast"] {
+  color-scheme: light;
+  --text-color: #000;
+  --muted-text-color: #000;
+  --border-color: #bfbfbf;
+  --footer-background-color: #000;
+  --primary-color: #b60000;
+  --focus-color: #b60000;
+  --active-color: #f0cccc;
+  --link-color: #0000ff;
+  --link-color-hover: #0000bf;
+  --link-color-visited: #2626ff;
+  --masthead-link-color: #000;
+  --masthead-link-color-hover: #000;
+  --navicon-link-color-hover: #cccccc;
+  --base00: #000000;
+  --base04: #918f88;
+  --base05: #b5b3aa;
+  --base06: #d9d7cc;
+  --base08: #ff6c60;
+  --base09: #e9c062;
+  --base0a: #ffffb6;
+  --base0b: #a8ff60;
+  --base0c: #c6c5fe;
+  --base0d: #96cbfe;
+  --base0e: #ff73fd;
+}
+
+/* Dark (dark) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background-color: #252a34;
+  --text-color: #eaeaea;
+  --muted-text-color: #eeeeee;
+  --border-color: #51555d;
+  --code-background-color: #1f242c;
+  --form-background-color: #1f242c;
+  --footer-background-color: #1a1d24;
+  --primary-color: #00adb5;
+  --focus-color: #00adb5;
+  --active-color: #cceff0;
+  --link-color: #8cd2d5;
+  --link-color-hover: #a9dde0;
+  --link-color-visited: #699ea0;
+  --masthead-link-color: #eaeaea;
+  --masthead-link-color-hover: #bbbbbb;
+  --navicon-link-color-hover: #1a1d24;
+  --muted-text-color-contrast: #3d4144;
+}
+
+/* Dirt (light) */
+:root[data-theme="dirt"] {
+  color-scheme: light;
+  --background-color: #f3f3f3;
+  --text-color: #343434;
+  --muted-text-color: #8e8b82;
+  --border-color: #e9dcbe;
+  --footer-background-color: #e9dcbe;
+  --primary-color: #343434;
+  --focus-color: #343434;
+  --active-color: #d6d6d6;
+  --link-color: #343434;
+  --link-color-hover: #272727;
+  --link-color-visited: #525252;
+  --masthead-link-color: #343434;
+  --masthead-link-color-hover: #343434;
+  --navicon-link-color-hover: #d6d6d6;
+  --base00: #231e18;
+  --base04: #b4a490;
+  --base05: #cabcb1;
+  --base06: #d7c8bc;
+  --base08: #d35c5c;
+  --base09: #ca7f32;
+  --base0a: #e0ac16;
+  --base0b: #b7ba53;
+  --base0c: #6eb958;
+  --base0d: #88a4d3;
+  --base0e: #bb90e2;
+}
+
+/* Mint (light) */
+:root[data-theme="mint"] {
+  color-scheme: light;
+  --background-color: #f3f6f6;
+  --text-color: #40514e;
+  --muted-text-color: #40514e;
+  --border-color: #cfd4d3;
+  --footer-background-color: #30e3ca;
+  --primary-color: #11999e;
+  --focus-color: #11999e;
+  --active-color: #cfebec;
+  --link-color: #11999e;
+  --link-color-hover: #0d7377;
+  --link-color-visited: #35a8ad;
+  --masthead-link-color: #40514e;
+  --masthead-link-color-hover: #40514e;
+  --navicon-link-color-hover: #d9dcdc;
+}
+
+/* Neon (dark) */
+:root[data-theme="neon"] {
+  color-scheme: dark;
+  --background-color: #141010;
+  --text-color: #fff6fb;
+  --muted-text-color: #fff8fc;
+  --border-color: #434040;
+  --code-background-color: #110e0e;
+  --form-background-color: #110e0e;
+  --footer-background-color: #18020a;
+  --primary-color: #f21368;
+  --focus-color: #f21368;
+  --active-color: #fcd0e1;
+  --link-color: #f21368;
+  --link-color-hover: #f54e8e;
+  --link-color-visited: #b60e4e;
+  --masthead-link-color: #fff6fb;
+  --masthead-link-color-hover: #ccc5c9;
+  --navicon-link-color-hover: #0e0b0b;
+  --notice-background-mix: 90%;
+  --code-notice-background-mix: 95%;
+  --base00: #ffffff;
+  --base04: #000000;
+  --base05: #101010;
+  --base06: #151515;
+  --base08: #ff0086;
+  --base09: #fd8900;
+  --base0a: #aba800;
+  --base0b: #00c918;
+  --base0c: #1faaaa;
+  --base0d: #3777e6;
+  --base0e: #ad00a1;
+  --muted-text-color-contrast: #3d4144;
+}
+
+/* Plum (dark) */
+:root[data-theme="plum"] {
+  color-scheme: dark;
+  --background-color: #521477;
+  --text-color: #fffd86;
+  --muted-text-color: #fffd9e;
+  --border-color: #754392;
+  --code-background-color: #461165;
+  --form-background-color: #461165;
+  --footer-background-color: #3e0f59;
+  --primary-color: #c327ab;
+  --focus-color: #c327ab;
+  --active-color: #f3d4ee;
+  --link-color: #c327ab;
+  --link-color-hover: #d25dc0;
+  --link-color-visited: #921d80;
+  --masthead-link-color: #fffd86;
+  --masthead-link-color-hover: #ccca6b;
+  --navicon-link-color-hover: #390e53;
+  --notice-background-mix: 70%;
+  --code-notice-background-mix: 80%;
+  --base00: #ffffff;
+  --base04: #000000;
+  --base05: #101010;
+  --base06: #151515;
+  --base08: #ff0086;
+  --base09: #fd8900;
+  --base0a: #aba800;
+  --base0b: #00c918;
+  --base0c: #1faaaa;
+  --base0d: #3777e6;
+  --base0e: #ad00a1;
+  --muted-text-color-contrast: #3d4144;
+}
+
+/* Sunrise (light) */
+:root[data-theme="sunrise"] {
+  color-scheme: light;
+  --background-color: #e8d5b7;
+  --text-color: #000;
+  --muted-text-color: #0e2431;
+  --border-color: #baaa92;
+  --code-background-color: #edddc5;
+  --form-background-color: #ebdbc2;
+  --footer-background-color: #f9b248;
+  --primary-color: #fc3a52;
+  --focus-color: #fc3a52;
+  --active-color: #fed8dc;
+  --dark-gray: #0e2431;
+  --link-color: #e3344a;
+  --link-color-hover: #ea6777;
+  --link-color-visited: #aa2738;
+  --masthead-link-color: #000;
+  --masthead-link-color-hover: black;
+  --navicon-link-color-hover: #a29580;
+  --notice-background-mix: 75%;
+  --base00: #1d1f21;
+  --base04: #b4b7b4;
+  --base05: #c5c8c6;
+  --base06: #e0e0e0;
+  --base08: #cc6666;
+  --base09: #de935f;
+  --base0a: #f0c674;
+  --base0b: #b5bd68;
+  --base0c: #8abeb7;
+  --base0d: #81a2be;
+  --base0e: #b294bb;
+  --active-color-contrast: #0e2431;
+}
+
+/* Catppuccin Latte (light) */
+:root[data-theme="catppuccin_latte"] {
+  color-scheme: light;
+  --background-color: #eff1f5;
+  --text-color: #4c4f69;
+  --muted-text-color: #707287;
+  --border-color: transparent;
+  --code-background-color: #cbcdd0;
+  --form-background-color: #cbcdd0;
+  --footer-background-color: #e6e9ef;
+  --primary-color: #d20f39;
+  --success-color: #40a02b;
+  --warning-color: #fe640b;
+  --danger-color: #d20f39;
+  --info-color: #04a5e5;
+  --focus-color: #d20f39;
+  --active-color: #f6cfd7;
+  --gray: #dce0e8;
+  --dark-gray: #6e7074;
+  --light-gray: #eef0f4;
+  --link-color: #0384b7;
+  --link-color-hover: #026389;
+  --link-color-visited: #2996c2;
+  --masthead-link-color: #4c4f69;
+  --masthead-link-color-hover: #3d3f54;
+  --navicon-link-color-hover: #a7a9ac;
+  --active-color-contrast: #6e7074;
+}
+
+/* Catppuccin Mocha (dark) */
+:root[data-theme="catppuccin_mocha"] {
+  color-scheme: dark;
+  --background-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --muted-text-color: #d7def6;
+  --border-color: transparent;
+  --code-background-color: #1a1a27;
+  --form-background-color: #1a1a27;
+  --footer-background-color: #181825;
+  --primary-color: #f38ba8;
+  --focus-color: #f38ba8;
+  --active-color: #fde8ee;
+  --link-color: #f38ba8;
+  --link-color-hover: #f6a8be;
+  --link-color-visited: #b6687e;
+  --masthead-link-color: #cdd6f4;
+  --masthead-link-color-hover: #a4abc3;
+  --navicon-link-color-hover: #151520;
+  --notice-background-mix: 90%;
+  --code-notice-background-mix: 95%;
+  --base00: #1e1e2e;
+  --base04: #585b70;
+  --base05: #cdd6f4;
+  --base06: #f5e0dc;
+  --base08: #f38ba8;
+  --base09: #fab387;
+  --base0a: #f9e2af;
+  --base0b: #a6e3a1;
+  --base0c: #94e2d5;
+  --base0d: #89b4fa;
+  --base0e: #cba6f7;
+  --muted-text-color-contrast: #3d4144;
+}
+
+/* 스킨별 추가 규칙 */
+/* Air */
+:where(:root[data-theme="air"]) {
+.page__footer {
+  color: #fff !important;
+}
+
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+}
+
+/* Contrast */
+:where(:root[data-theme="contrast"]) {
+.page__content {
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--success,
+  .notice--danger {
+    color: var(--text-color);
+  }
+}
+
+.page__footer {
+  color: #fff !important;
+}
+
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+}
+
+/* Dark */
+:where(:root[data-theme="dark"]) {
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: var(--form-background-color);
+}
+}
+
+/* Mint */
+:where(:root[data-theme="mint"]) {
+.page__footer {
+  color: #fff !important;
+}
+
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+}
+
+/* Neon */
+:where(:root[data-theme="neon"]) {
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+
+
+.pagination--pager {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border-color: transparent;
+
+  &:visited {
+    color: var(--text-color);
+  }
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: var(--form-background-color);
+}
+}
+
+/* Plum */
+:where(:root[data-theme="plum"]) {
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+
+.page__content {
+  a,
+  a:visited {
+    color: inherit;
+  }
+}
+
+
+.pagination--pager {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border-color: transparent;
+
+  &:visited {
+    color: var(--text-color);
+  }
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: var(--form-background-color);
+}
+}
+
+/* Sunrise */
+:where(:root[data-theme="sunrise"]) {
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+}
+
+/* Catppuccin Latte */
+:where(:root[data-theme="catppuccin_latte"]) {
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: var(--form-background-color);
+}
+}
+
+/* Catppuccin Mocha */
+:where(:root[data-theme="catppuccin_mocha"]) {
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+
+
+.pagination--pager {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border-color: transparent;
+
+  &:visited {
+    color: var(--text-color);
+  }
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: var(--form-background-color);
+}
+
+
+::selection {
+  background:  var(--primary-color) !important;
+  color: var(--background-color) !important;
+}
+}
+

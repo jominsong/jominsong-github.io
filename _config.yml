@@ -12,7 +12,14 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "mint" # "default","air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "catppuccin_latte", "catppuccin_mocha"
+minimal_mistakes_skin    : "mint" # (설정 창을 쓰는 동안은 적용되지 않음. 기본 테마는 아래 theme_switcher 에서 정한다)
+
+# Theme switcher (설정 창)
+# 테마 목록은 _data/themes.yml (default, air, aqua, contrast, dark, dirt, mint, neon, plum, sunrise, catppuccin_latte, catppuccin_mocha)
+theme_switcher:
+  default_mode           : light # 처음 방문했을 때의 모드: light, dark, system
+  default_light          : mint # 라이트 모드에서 쓸 기본 테마 (themes.yml 에서 mode: light 인 것)
+  default_dark           : dark # 다크 모드에서 쓸 기본 테마 (themes.yml 에서 mode: dark 인 것)
 
 # Site Settings
 locale                   : "en-KR"
@@ -24,7 +31,7 @@ name                     : "Cho Min Song"
 description              : "Introduce about my portfolio"
 url                      : # the base hostname & protocol for your site e.g. "https://jominsong.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "jominsong/jominsong-github"
+repository               : # GitHub jominsong/jominsong-github.io e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title

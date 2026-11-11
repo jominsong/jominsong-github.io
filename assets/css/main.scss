@@ -5,5 +5,5 @@ search: false
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'mint' }}"; // skin
+@import "minimal-mistakes/themes"; // 12개 테마 색상표 (설정 창에서 data-theme 으로 전환)
 @import "minimal-mistakes"; // main partials

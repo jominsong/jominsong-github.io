@@ -17,6 +17,29 @@
   {%- endif %}
 </script>
 
+{%- comment -%}
+  설정 창에서 고른 테마를 CSS 가 로드되기 전에 <html data-theme> 로 적용한다 (깜빡임 방지).
+  주의: compress_html 이 줄바꿈을 지울 수 있으니 이 스크립트에는 // 주석을 쓰지 말 것.
+  규칙은 assets/js/theme-switcher.js 와 같다. 모드 -> (라이트 테마 | 다크 테마)
+{%- endcomment -%}
+{%- assign ts = site.theme_switcher -%}
+<script>
+  (function () {
+    var root = document.documentElement;
+    var names = {{ site.data.themes | map: "name" | jsonify }};
+    function read(k, f) {
+      try { var v = window.localStorage.getItem('jms-theme-' + k); return v ? v : f; } catch (e) { return f; }
+    }
+    var mode = read('mode', '{{ ts.default_mode | default: "light" }}');
+    var light = read('light', '{{ ts.default_light | default: "default" }}');
+    var dark = read('dark', '{{ ts.default_dark | default: "dark" }}');
+    if (names.indexOf(light) < 0) { light = '{{ ts.default_light | default: "default" }}'; }
+    if (names.indexOf(dark) < 0) { dark = '{{ ts.default_dark | default: "dark" }}'; }
+    var useDark = mode === 'dark' || (mode === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme', useDark ? dark : light);
+  })();
+</script>
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">

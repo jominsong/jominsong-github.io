@@ -81,6 +81,16 @@
   @return if(yiq-is-light($color, $threshold), $dark, $light);
 }
 
+/*
+   CSS 변수용 yiq 대비색.
+   배경은 var(--이름), 글자색은 테마별로 미리 계산한 var(--이름-contrast)를 쓴다.
+   ========================================================================== */
+
+@mixin var-contrasted($name) {
+  background-color: var(--#{$name});
+  color: var(--#{$name}-contrast);
+}
+
 @mixin yiq-contrasted(
   $background-color,
   $dark: $yiq-contrasted-dark-default,
